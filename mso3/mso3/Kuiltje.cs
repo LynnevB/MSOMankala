@@ -14,7 +14,7 @@ namespace mso3
             speler_nummer = Speler;
         }
 
-        protected void gooi_steentje()
+        public void gooi_steentje()
         {
             steentjes++;
         }
