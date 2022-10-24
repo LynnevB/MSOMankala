@@ -52,7 +52,7 @@ namespace mso3
         {
             // TO DO
             int stenen_p1 = bord.kuiltjes[0].steentjes;
-            int stenen_p2 = bord.kuiltjes[bord.kuiltjes_per_speler + 1].steentjes;
+            int stenen_p2 = bord.kuiltjes[(bord.kuiltjes.Count / 2) + 1].steentjes;
 
             // gelijk spel???
             if (stenen_p1 > stenen_p2)
