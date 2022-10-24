@@ -30,7 +30,7 @@ namespace mso3
             Kuiltje laatste_kuiltje = regels.strooi_stenen(bord, gekozen_kuiltje, speler_nummer);
 
             // eigen thuiskuiltje
-            if (laatste_kuiltje.soort_kuiltje == Kuiltje.kuil_soort.thuis && laatste_kuiltje.speler_nummer == speler_nummer)
+            if (laatste_kuiltje is Kuiltje_Thuis && laatste_kuiltje.speler_nummer == speler_nummer)
                 ;
 
             // niet leeg kuiltje -> pak deze stenen en ga verder
