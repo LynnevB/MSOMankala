@@ -18,9 +18,9 @@ namespace mso3
 
         public Spel()
         {
-            bord = regels.maak_bord();
-            P1 = new Speler(spelers.p1);
-            P2 = new Speler(spelers.p2);
+            bord = regels.create_maak_bord().maakBord();
+            P1 = new Speler(spelers.p1, regels);
+            P2 = new Speler(spelers.p2, regels);
         }
 
         private void speel_spel()

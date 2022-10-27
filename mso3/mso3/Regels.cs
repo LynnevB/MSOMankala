@@ -6,10 +6,10 @@ namespace mso3
 {
     interface Regels
     {
-        Bord maak_bord();
-        List<Kuiltje> mogelijke_zetten(Bord bord, Speler speler);
-        Kuiltje strooi_stenen(Bord bord, Kuiltje kuiltje, Spel.spelers speler);
-        bool check_einde_spel(Bord bord);
-        Spel.spelers winnaar(Bord bord);
+        Maak_Bord create_maak_bord();
+        Speel_Zet create_speel_zet();
+        Strooi_Stenen create_strooi_stenen();
+        Check_Einde_Spel create_check_einde();
+        Winnaar create_winnaar();
     }
 }

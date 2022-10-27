@@ -6,59 +6,25 @@ namespace mso3
 {
     class StandaardRegels : Regels
     {
-        public Bord maak_bord()
+        public Maak_Bord create_maak_bord()
         {
-            Console.WriteLine("Hoeveel kuiltjes wil je per speler?");
-            int aantal_kuiltjes = Convert.ToInt32(Console.ReadLine());
-
-            Console.WriteLine("Met hoeveel steentjes moeten de kuiltjes beginnen?");
-            int aantal_steentjes = Convert.ToInt32(Console.ReadLine());
-
-            bool thuiskuiltjes = true;
-
-            Bord bord = new Bord(aantal_kuiltjes, aantal_steentjes, thuiskuiltjes);
-            return bord;
+            return new Maak_Bord();
         }
-
-        public List<Kuiltje> mogelijke_zetten(Bord bord, Speler speler)
+        public Speel_Zet create_speel_zet()
         {
-            List<Kuiltje> mogelijke_kuiltjes = new List<Kuiltje>();
-
-            foreach(Kuiltje kuil in bord.kuiltjes)
-            {
-                if (kuil.speler_nummer == speler.speler_nummer
-                    && kuil is Kuiltje_Normaal
-                    && kuil.steentjes > 0
-                   )
-                    mogelijke_kuiltjes.Add(kuil);
-            }
-
-            return mogelijke_kuiltjes;
+            return new Speel_Zet_Mankala();
         }
-
-        public Kuiltje strooi_stenen(Bord bord, Kuiltje kuiltje, Spel.spelers speler)
+        public Strooi_Stenen create_strooi_stenen()
         {
-            // TO DO
-            return kuiltje;
+            return new Strooi_Stenen_Mankala();
         }
-
-        public bool check_einde_spel(Bord bord)
+        public Check_Einde_Spel create_check_einde()
         {
-            // TO DO
-            return false;
+            return new Check_Einde_Spel_Mankala();
         }
-
-        public Spel.spelers winnaar(Bord bord)
+        public Winnaar create_winnaar()
         {
-            // TO DO
-            int stenen_p1 = bord.kuiltjes[0].steentjes;
-            int stenen_p2 = bord.kuiltjes[(bord.kuiltjes.Count / 2) + 1].steentjes;
-
-            // gelijk spel???
-            if (stenen_p1 > stenen_p2)
-                return Spel.spelers.p1;
-            else
-                return Spel.spelers.p2;
+            return new Winnaar_Mankala();
         }
     }
 }

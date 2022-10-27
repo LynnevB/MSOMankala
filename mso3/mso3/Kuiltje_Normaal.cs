@@ -11,7 +11,7 @@ namespace mso3
             steentjes = begin_steentjes;
         }
 
-        public void haal_leeg()
+        public override void haal_leeg()
         {
             steentjes = 0;
         }

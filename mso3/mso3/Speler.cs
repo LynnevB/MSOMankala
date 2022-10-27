@@ -1,39 +1,44 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace mso3
 {
     class Speler
     {
         public Spel.spelers speler_nummer;
+        Regels regels;
 
-        public Speler(Spel.spelers Speler)
+        public Speler(Spel.spelers Speler, Regels regel)
         {
             speler_nummer = Speler;
+            regels = regel;
         }
 
-        private Kuiltje kies_kuiltje(List<Kuiltje> lijst)
+        public Kuiltje kies_kuiltje(Bord bord)
         {
-            // TO DO
-            Kuiltje keuze = lijst[0];
-            return keuze;
+            
+            Console.WriteLine("Kies uit de volgende kuiltjes: ");
+            for(int i = 0; i < bord.kuiltjes.Count; i++)
+            {
+                //if (regels.)
+                //Console.WriteLine("Kuiltje", );
+            }
+
+            return bord.kuiltjes[1];
         }
 
-        public void speel_zet(Bord bord, Regels regels)
+        public void speel_zet(Bord bord)
         {
             // TO DO
 
             // eerste zet 
-            List<Kuiltje> mogelijke_kuiltjes = regels.mogelijke_zetten(bord, this);
-            Kuiltje gekozen_kuiltje = kies_kuiltje(mogelijke_kuiltjes);
-            Kuiltje laatste_kuiltje = regels.strooi_stenen(bord, gekozen_kuiltje, speler_nummer);
+            Kuiltje gekozen_kuiltje = kies_kuiltje(bord);
+            Kuiltje laatste_kuiltje = regels.create_strooi_stenen().strooiStenen(gekozen_kuiltje, bord, speler_nummer);
 
             // eigen thuiskuiltje
             if (laatste_kuiltje is Kuiltje_Thuis && laatste_kuiltje.speler_nummer == speler_nummer)
                 ;
 
-            // niet leeg kuiltje -> pak deze stenen en ga verder
+            // niet leeg kuiltje -> pak deze stenen en ga verder 
             else if (laatste_kuiltje.steentjes > 0)
                 ;
 

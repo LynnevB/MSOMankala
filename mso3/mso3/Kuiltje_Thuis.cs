@@ -10,5 +10,7 @@ namespace mso3
         {
             steentjes = 0;
         }
+
+        public override void haal_leeg() { }
     }
 }

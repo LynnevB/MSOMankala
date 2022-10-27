@@ -18,5 +18,7 @@ namespace mso3
         {
             steentjes++;
         }
+
+        public abstract void haal_leeg();
     }
 }
