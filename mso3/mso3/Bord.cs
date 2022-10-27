@@ -31,5 +31,16 @@ namespace mso3
                 }
             }
         }
+
+        public Kuiltje tegenover_kuiltje(Kuiltje kuil)
+        {
+            int index = kuiltjes.IndexOf(kuil);
+            int totaal_kuiltjes = kuiltjes.Count;
+            int tegenover_index = totaal_kuiltjes - index;
+            if (thuiskuiltje)
+                tegenover_index -= 1;
+            
+            return kuiltjes[tegenover_index];
+        }
     }
 }

@@ -8,19 +8,16 @@ namespace mso3
     {
         public void speel_zet(Bord bord, Speler speler)
         {
-            // TO DO
-
-            // eerste zet 
-            Kuiltje gekozen_kuiltje = speler.kies_kuiltje(bord);
-            Kuiltje laatste_kuiltje = bord.regels.create_strooi_stenen().strooiStenen(gekozen_kuiltje, bord, speler.speler_nummer);
+            // eerste zet
+            Kuiltje laatste_kuiltje = zet_kies_kuiltje(bord, speler);
 
             // eigen thuiskuiltje
             if (laatste_kuiltje is Kuiltje_Thuis && laatste_kuiltje.speler_nummer == speler.speler_nummer)
-                ;
+                laatste_kuiltje = zet_kies_kuiltje(bord, speler);
 
             // niet leeg kuiltje -> pak deze stenen en ga verder 
             else if (laatste_kuiltje.steentjes > 0)
-                ;
+                zet_strooi_stenen(laatste_kuiltje, bord, speler);
 
             else
             {

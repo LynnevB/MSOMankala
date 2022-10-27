@@ -7,7 +7,7 @@ namespace mso3
     class Spel
     {
         private Speler P1, P2;
-        static Regels regels = new StandaardRegels();
+        public static Regels regels = new StandaardRegels();
         public Bord bord;
 
         public enum spelers
@@ -19,8 +19,8 @@ namespace mso3
         public Spel()
         {
             bord = regels.create_maak_bord().maakBord();
-            P1 = new Speler(spelers.p1, regels);
-            P2 = new Speler(spelers.p2, regels);
+            P1 = new Speler(spelers.p1);
+            P2 = new Speler(spelers.p2);
         }
 
         private void speel_spel()
