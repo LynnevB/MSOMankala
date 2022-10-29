@@ -27,10 +27,11 @@ namespace mso3
                     index = 0;
 
                 current = bord.kuiltjes[index];
-                if(!(current is Kuiltje_Thuis && !(thuiskuiltjes && current.speler_nummer == speler)))
+                if (!(current is Kuiltje_Thuis && !(thuiskuiltjes && current.speler_nummer == speler)))
+                {
                     current.gooi_steentje();
-                
-                stenen--;
+                    stenen--;
+                }
             }
 
             return current;

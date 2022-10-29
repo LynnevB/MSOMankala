@@ -6,5 +6,6 @@ namespace mso3
 {
     abstract class Check_Einde_Spel
     {
+        public abstract bool check_einde(Bord bord, Speler speler);
     }
 }

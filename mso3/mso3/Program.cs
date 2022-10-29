@@ -6,8 +6,8 @@ namespace mso3
     {
         static void Main(string[] args)
         {
-            //Kuiltje a = new Kuiltje_Normaal(Spel.spelers.p1, 3);
-            //Console.WriteLine(a is Kuiltje_Normaal);
+            Spel spel = new Spel();
+            spel.speel_spel();
         }
     }
 }
