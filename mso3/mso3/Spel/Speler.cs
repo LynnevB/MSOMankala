@@ -35,7 +35,7 @@ namespace mso3
         public Kuiltje kies_kuiltje(Bord bord)
         {
             List<int> mogelijke_kuiltjes = print_mogelijke_kuiltjes(bord);
-            int kuiltje_index = Convert.ToInt32(Console.ReadLine());
+            int kuiltje_index = Convert.ToInt32(Console.ReadLine()); // Add exception if something other than number is typed
 
             while (!mogelijke_kuiltjes.Contains(kuiltje_index))
             {

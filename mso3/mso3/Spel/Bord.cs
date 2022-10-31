@@ -43,20 +43,75 @@ namespace mso3
             return kuiltjes[tegenover_index];
         }
 
-
+        // Moet nog aangepast worden voor als er geen thuiskuiltjes zijn
         public void print_bord()
         {
-            Console.WriteLine();
-            for (int i = 0; i < kuiltjes.Count; i++)
+            string normalgap = "|   |";
+            string homegap = "|     |";
+
+            string whitespacetoprow = "       ";
+            string whitespacebottomrow = "";
+
+            string lines = "-------" + new string('-', 5 * (kuiltjes.Count / 2)) + "--";
+
+            string nummeringtop = "       ";
+            string nummeringbottom = "";
+
+            string inhoudtop = "       ";
+            string inhoudbottom = "";
+
+            for (int i = kuiltjes.Count - 1; i >= (kuiltjes.Count / 2); i--)
             {
-                string text = "Kuiltje " + i + ", " + kuiltjes[i].speler_nummer;
                 if (kuiltjes[i] is Kuiltje_Thuis)
-                    text += ", Thuis: ";
+                {
+                    whitespacetoprow += homegap;
+                    nummeringtop += ("" + i).PadLeft(4).PadRight(7);
+
+                    inhoudtop += ("|" + ("" + kuiltjes[i].steentjes).PadLeft(3).PadRight(5) + "|");
+                }
                 else
-                    text += ", Normaal: ";
-                text += kuiltjes[i].steentjes;
-                Console.WriteLine(text);
+                {
+                    whitespacetoprow += normalgap;
+                    nummeringtop += ("" + i).PadLeft(3).PadRight(5);
+
+                    inhoudtop += ("|" + ("" + kuiltjes[i].steentjes).PadLeft(2).PadRight(3) + "|");
+                }
             }
+
+            for (int i = 0; i < (kuiltjes.Count / 2); i++)
+            {
+                if (kuiltjes[i] is Kuiltje_Thuis)
+                {
+                    whitespacebottomrow += homegap;
+
+                    nummeringbottom += ("" + i).PadLeft(4).PadRight(7);
+
+                    inhoudbottom += ("|" + ("" + kuiltjes[i].steentjes).PadLeft(3).PadRight(5) + "|");
+                }
+                else
+                {
+                    whitespacebottomrow += normalgap;
+
+                    nummeringbottom += ("" + i).PadLeft(3).PadRight(5);
+
+                    inhoudbottom += ("|" + ("" + kuiltjes[i].steentjes).PadLeft(2).PadRight(3) + "|");
+                }
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Speler 2");
+            Console.WriteLine(nummeringtop);
+            Console.WriteLine(lines);
+            Console.WriteLine(whitespacetoprow);
+            Console.WriteLine(inhoudtop);
+            Console.WriteLine(whitespacetoprow);
+            Console.WriteLine(lines);
+            Console.WriteLine(whitespacebottomrow);
+            Console.WriteLine(inhoudbottom);
+            Console.WriteLine(whitespacebottomrow);
+            Console.WriteLine(lines);
+            Console.WriteLine(nummeringbottom);
+            Console.WriteLine("Speler 1");
             Console.WriteLine();
         }
     }
