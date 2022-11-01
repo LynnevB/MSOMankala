@@ -25,6 +25,28 @@ namespace mso3
                     && kuiltje.steentjes > 0);
         }
 
+        public void steen_in_thuiskuiltje(int steentjes, Speler speler, Bord bord)
+        {
+            if (speler.speler_nummer == Spel.spelers.p1)
+            {
+                // thuiskuiltje speler 1
+                bord.kuiltjes[0].steentjes += steentjes;
+            }
+            else
+            {
+                // thuiskuiltje speler 2
+                int index = bord.kuiltjes.Count / 2;
+                bord.kuiltjes[index].steentjes += steentjes;
+            }
+        }
+
+        public void print_tekst(string tekst)
+        {
+            Console.WriteLine(tekst);
+            Console.WriteLine("(Klik op enter om verder te gaan)");
+            Console.ReadLine();
+        }
+
         public abstract void speel_zet(Bord bord, Speler speler);
     }
 }

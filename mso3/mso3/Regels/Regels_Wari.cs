@@ -4,19 +4,20 @@ using System.Text;
 
 namespace mso3
 {
-    class Regels_Mankala : Regels
+    class Regels_Wari : Regels
     {
+        // nog aanpassen
         public Maak_Bord create_maak_bord()
         {
             return new Maak_Bord();
         }
         public Speel_Zet create_speel_zet()
         {
-            return new Speel_Zet_Mankala();
+            return new Speel_Zet_Wari();
         }
         public Strooi_Stenen create_strooi_stenen()
         {
-            return new Strooi_Stenen_Mankala();
+            return new Strooi_Stenen_Wari();
         }
         public Check_Einde_Spel create_check_einde()
         {
@@ -28,7 +29,7 @@ namespace mso3
         }
         public override string ToString()
         {
-            return "Mankala Regels";
+            return "Wari Regels";
         }
     }
 }

@@ -39,7 +39,7 @@ namespace mso3
         {
             Console.WriteLine("Kies een set regels: ");
 
-            List<Regels> lijst_regels = new List<Regels>() { new Regels_Mankala() };
+            List<Regels> lijst_regels = new List<Regels>() { new Regels_Mankala(), new Regels_Wari(), new Regels_Bonkus() };
             for (int i = 0; i < lijst_regels.Count; i++)
             {
                 Console.WriteLine("[" + (i+1) + "] " + lijst_regels[i].ToString());
