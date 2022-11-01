@@ -9,7 +9,7 @@ namespace mso3
         protected Kuiltje zet_kies_kuiltje(Bord bord, Speler speler)
         {
             Kuiltje gekozen_kuiltje = speler.kies_kuiltje(bord);
-            return Spel.strooi_stenen.strooiStenen(gekozen_kuiltje, bord, speler.speler_nummer);
+            return Spel.strooi_stenen.strooi_stenen(gekozen_kuiltje, bord, speler.speler_nummer);
         }
 
         public bool kuiltje_mogelijk (Kuiltje kuiltje, Speler speler)
