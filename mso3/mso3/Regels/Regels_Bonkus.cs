@@ -4,7 +4,7 @@ using System.Text;
 
 namespace mso3
 {
-    class Regels_Mankala : Regels
+    class Regels_Bonkus : Regels
     {
         public Maak_Bord create_maak_bord()
         {
@@ -16,7 +16,7 @@ namespace mso3
         }
         public Strooi_Stenen create_strooi_stenen()
         {
-            return new Strooi_Stenen_Mankala();
+            return new Strooi_Stenen_Wari();
         }
         public Check_Einde_Spel create_check_einde()
         {
@@ -24,11 +24,12 @@ namespace mso3
         }
         public Winnaar create_winnaar()
         {
-            return new Winnaar_Meeste_Punten();
+            return new Winnaar_Minste_Punten();
         }
         public override string ToString()
         {
-            return "Mankala Regels";
+            return "Bonkus Regels";
         }
     }
+}
 }

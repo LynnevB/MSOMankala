@@ -6,12 +6,6 @@ namespace mso3
 {
     public abstract class Strooi_Stenen
     {
-        bool thuiskuiltjes;
-        public Strooi_Stenen(bool thuisKuiltjes)
-        {
-            thuiskuiltjes = thuisKuiltjes;
-        }
-
         // kuiltje dat wordt megegeven als current is het gekozen kuiltje dat leeg wordt gehaald
         // daar wordt dus niet een steentje in gegooid
         public Kuiltje strooiStenen(Kuiltje current, Bord bord, Spel.spelers speler)
@@ -27,7 +21,7 @@ namespace mso3
                     index = 0;
 
                 current = bord.kuiltjes[index];
-                if (!(current is Kuiltje_Thuis && !(thuiskuiltjes && current.speler_nummer == speler)))
+                if (kuiltje(current, speler))
                 {
                     current.gooi_steentje();
                     stenen--;
@@ -36,5 +30,7 @@ namespace mso3
 
             return current;
         }
+
+        public abstract bool kuiltje(Kuiltje current, Spel.spelers speler);
     }
 }

@@ -14,17 +14,7 @@ namespace mso3
             laatste_kuiltje.haal_leeg();
             tegenover.haal_leeg();
 
-            if (speler.speler_nummer == Spel.spelers.p1)
-            {
-                // thuiskuiltje speler 1
-                bord.kuiltjes[0].steentjes += steentjes;
-            }
-            else 
-            {
-                // thuiskuiltje speler 2
-                int index = bord.kuiltjes.Count / 2;
-                bord.kuiltjes[index].steentjes += steentjes; 
-            }
+            steen_in_thuiskuiltje(steentjes, speler, bord);
         }
 
         public override void speel_zet(Bord bord, Speler speler)
@@ -52,9 +42,7 @@ namespace mso3
                 // niet leeg kuiltje -> pak deze stenen en ga verder 
                 else if (laatste_kuiltje.steentjes > 1)
                 {
-                    Console.WriteLine(speler.speler_nummer + " pakt de steentjes van kuiltje " + bord.kuiltjes.IndexOf(laatste_kuiltje));
-                    Console.WriteLine("(Klik op enter om verder te gaan)");
-                    Console.ReadLine();
+                    print_tekst(speler.speler_nummer + " pakt de steentjes van kuiltje " + bord.kuiltjes.IndexOf(laatste_kuiltje));
                     laatste_kuiltje = zet_strooi_stenen(laatste_kuiltje, bord, speler);
                 }
 
@@ -63,18 +51,14 @@ namespace mso3
                     // leeg kuiltje speler + tegenover niet leeg -> pak laatste gestrooide steen en tegenover kuiltje voeg toe aan thuiskuiltje zet over
                     if (bord.tegenover_kuiltje(laatste_kuiltje).steentjes > 0 && laatste_kuiltje.speler_nummer == speler.speler_nummer)
                     {
-                        Console.WriteLine(speler.speler_nummer + " pakt het laatste steentje en de steentjes aan de overkant en gooit ze in hun thuiskuiltje.");
-                        Console.WriteLine("(Klik op enter om verder te gaan)");
-                        Console.ReadLine();
+                        print_tekst(speler.speler_nummer + " pakt het laatste steentje en de steentjes aan de overkant en gooit ze in hun thuiskuiltje.");
                         zet_tegenover_kuiltje(laatste_kuiltje, bord, speler);
                         bord.print_bord();
                     }
 
                     // leeg kuiltje speler + tegenover is leeg -> volgende aan de beurt
                     // leeg kuiltje andere speler -> volgende aan de beurt
-                    Console.WriteLine(speler.speler_nummer + ", jouw beurt is over.");
-                    Console.WriteLine("(Klik op enter om verder te gaan)");
-                    Console.ReadLine();
+                    print_tekst(speler.speler_nummer + ", jouw beurt is over.");
                     volgende_beurt = true;
                 }
             }
