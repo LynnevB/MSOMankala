@@ -8,6 +8,6 @@ namespace MSO3_Testing
     {
         // steen_in_kuiltje van strooi_stenen ? 
 
-
+        // test switch_speler ?
     }
 }

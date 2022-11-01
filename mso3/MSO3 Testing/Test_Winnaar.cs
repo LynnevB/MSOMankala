@@ -34,7 +34,7 @@ namespace MSO3_Testing
             string gewonnen_speler = geef_winnaar.winnaar(bord);
 
             // Assert
-            Assert.True(expected == gewonnen_speler);
+            Assert.Equal(expected, gewonnen_speler);
         }
 
         [Theory]
@@ -95,7 +95,7 @@ namespace MSO3_Testing
             string gewonnen_speler = geef_winnaar.winnaar(bord);
 
             // Assert
-            Assert.True(expected == gewonnen_speler);
+            Assert.Equal(expected, gewonnen_speler);
         }
 
         [Theory]
