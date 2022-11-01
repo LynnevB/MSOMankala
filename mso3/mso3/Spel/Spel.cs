@@ -4,7 +4,7 @@ using System.Text;
 
 namespace mso3
 {
-    class Spel
+    public class Spel
     {
         private Speler P1, P2;
         public Bord bord;

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace mso3
 {
-    abstract class Kuiltje
+    public abstract class Kuiltje
     {
         public int steentjes;
         public Spel.spelers speler_nummer;

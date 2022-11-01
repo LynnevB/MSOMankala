@@ -4,7 +4,7 @@ using System.Text;
 
 namespace mso3
 {
-    abstract class Strooi_Stenen
+    public abstract class Strooi_Stenen
     {
         bool thuiskuiltjes;
         public Strooi_Stenen(bool thuisKuiltjes)

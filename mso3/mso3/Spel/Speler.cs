@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace mso3
 {
-    class Speler
+    public class Speler
     {
         public Spel.spelers speler_nummer;
         public bool eindig_spel;

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace mso3
 {
-    class Bord
+    public class Bord
     {
         public List<Kuiltje> kuiltjes = new List<Kuiltje>();
         public bool thuiskuiltje;
@@ -43,7 +43,6 @@ namespace mso3
             return kuiltjes[tegenover_index];
         }
 
-        // Moet nog aangepast worden voor als er geen thuiskuiltjes zijn
         public void print_bord()
         {
             string normalgap = "|   |";
