@@ -66,7 +66,7 @@ namespace mso3
                 current_speler = switch_speler(current_speler);
             }
 
-            winnaar.winnaar(bord);
+            Console.WriteLine(winnaar.winnaar(bord));
         }
 
         Speler switch_speler(Speler speler)
