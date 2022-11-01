@@ -43,7 +43,7 @@ namespace mso3
                 else if (laatste_kuiltje.steentjes > 1)
                 {
                     print_tekst(speler.speler_nummer + " pakt de steentjes van kuiltje " + bord.kuiltjes.IndexOf(laatste_kuiltje));
-                    laatste_kuiltje = zet_strooi_stenen(laatste_kuiltje, bord, speler);
+                    laatste_kuiltje = Spel.strooi_stenen.strooiStenen(laatste_kuiltje, bord, speler.speler_nummer);
                 }
 
                 else

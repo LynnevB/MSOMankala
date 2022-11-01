@@ -9,13 +9,7 @@ namespace mso3
         protected Kuiltje zet_kies_kuiltje(Bord bord, Speler speler)
         {
             Kuiltje gekozen_kuiltje = speler.kies_kuiltje(bord);
-            return zet_strooi_stenen(gekozen_kuiltje, bord, speler);
-        }
-
-        protected Kuiltje zet_strooi_stenen(Kuiltje kuiltje, Bord bord, Speler speler)
-        {
-            Kuiltje laatste_kuiltje = Spel.strooi_stenen.strooiStenen(kuiltje, bord, speler.speler_nummer);
-            return laatste_kuiltje;
+            return Spel.strooi_stenen.strooiStenen(gekozen_kuiltje, bord, speler.speler_nummer);
         }
 
         public bool kuiltje_mogelijk (Kuiltje kuiltje, Speler speler)
@@ -25,6 +19,7 @@ namespace mso3
                     && kuiltje.steentjes > 0);
         }
 
+        // stenen worden gegooid in het thuiskuiltje van de speler
         public void steen_in_thuiskuiltje(int steentjes, Speler speler, Bord bord)
         {
             if (speler.speler_nummer == Spel.spelers.p1)
@@ -47,6 +42,7 @@ namespace mso3
             Console.ReadLine();
         }
 
+        // loop van de zet van een speler totdat de beurt voorbij is
         public abstract void speel_zet(Bord bord, Speler speler);
     }
 }
