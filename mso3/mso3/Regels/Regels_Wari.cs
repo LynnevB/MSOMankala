@@ -6,7 +6,6 @@ namespace mso3
 {
     class Regels_Wari : Regels
     {
-        // nog aanpassen
         public Maak_Bord create_maak_bord()
         {
             return new Maak_Bord();

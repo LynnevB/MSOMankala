@@ -39,7 +39,7 @@ namespace mso3
             int totaal_kuiltjes = kuiltjes.Count;
             int tegenover_index = totaal_kuiltjes - index;
             if (!heeft_thuiskuiltjes)
-                tegenover_index -= 1;
+                tegenover_index--;
             
             return kuiltjes[tegenover_index];
         }
@@ -65,6 +65,7 @@ namespace mso3
             string inhoud_boven = "       ";
             string inhoud_onder = "";
 
+            // thuiskuiltje speler 1
             if (heeft_thuiskuiltjes)
             {
                 start_index = 1;
@@ -87,6 +88,7 @@ namespace mso3
                 inhoud_boven += ("|" + ("" + kuiltjes[j].steentjes).PadLeft(2).PadRight(3) + "|");
             }
 
+            // thuiskuiltje speler 2
             if (heeft_thuiskuiltjes)
             {
                 rij_boven += thuis_gap;
@@ -94,7 +96,9 @@ namespace mso3
                 inhoud_boven += ("|" + ("" + kuiltjes[thuis_boven].steentjes).PadLeft(3).PadRight(5) + "|");
             }
 
+            // bovenste rij
             Console.WriteLine(enter + "Speler 2" + enter + nummers_boven + enter + lijn + enter + rij_boven + enter + inhoud_boven + enter + rij_boven + enter + lijn);
+            // onderste rij
             Console.WriteLine(rij_onder + enter + inhoud_onder + enter + rij_onder + enter + lijn + enter + nummers_onder + enter + "Speler 1" + enter);
         }
     }
