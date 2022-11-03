@@ -20,7 +20,7 @@ namespace mso3
         }
         public Check_Einde_Spel create_check_einde()
         {
-            return new Check_Einde_Spel_Mankala();
+            return new Check_Einde_Spel();
         }
         public Winnaar create_winnaar()
         {
@@ -32,4 +32,4 @@ namespace mso3
         }
     }
 }
-}
+

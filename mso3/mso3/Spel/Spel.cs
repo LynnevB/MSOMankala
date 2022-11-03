@@ -8,7 +8,7 @@ namespace mso3
     {
         private Speler P1, P2;
         public Bord bord;
-        Regels regels;
+        private Regels regels;
         public static Maak_Bord maak_bord;
         public static Speel_Zet speel_zet;
         public static Strooi_Stenen strooi_stenen;
