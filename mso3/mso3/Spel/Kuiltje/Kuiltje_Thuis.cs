@@ -4,7 +4,7 @@ using System.Text;
 
 namespace mso3
 {
-    class Kuiltje_Thuis : Kuiltje
+    public class Kuiltje_Thuis : Kuiltje
     {
         public Kuiltje_Thuis(Spel.spelers Speler) : base(Speler)
         {

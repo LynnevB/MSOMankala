@@ -6,7 +6,7 @@ namespace mso3
 {
     class Strooi_Stenen_Wari : Strooi_Stenen
     {
-        public override bool kuiltje(Kuiltje current, Spel.spelers speler)
+        public override bool moet_steen_in_kuiltje(Kuiltje current, Spel.spelers speler)
         {
             return !(current is Kuiltje_Thuis);
         }
