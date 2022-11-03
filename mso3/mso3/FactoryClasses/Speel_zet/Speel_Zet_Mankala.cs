@@ -4,7 +4,7 @@ using System.Text;
 
 namespace mso3
 {
-    class Speel_Zet_Mankala : Speel_Zet
+    public class Speel_Zet_Mankala : Speel_Zet
     {
         public void zet_tegenover_kuiltje(Kuiltje laatste_kuiltje, Bord bord, Speler speler)
         {
@@ -14,7 +14,7 @@ namespace mso3
             laatste_kuiltje.haal_leeg();
             tegenover.haal_leeg();
 
-            steen_in_thuiskuiltje(steentjes, speler, bord);
+            Spel.strooi_stenen.steen_in_thuiskuiltje(steentjes, speler, bord);
         }
 
         public override void speel_zet(Bord bord, Speler speler)

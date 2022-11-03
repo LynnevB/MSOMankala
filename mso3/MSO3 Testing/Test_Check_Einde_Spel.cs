@@ -12,8 +12,9 @@ namespace MSO3_Testing
         public void check_einde_true(Spel.spelers speler_nummer)
         {
             // Arrange
-            Bord bord = new Bord(6, 0, true);
             Check_Einde_Spel einde = new Check_Einde_Spel();
+            Spel.speel_zet = new Speel_Zet_Mankala();
+            Bord bord = new Bord(6, 0, true);
             Speler speler = new Speler(speler_nummer);
 
             // Act
@@ -29,8 +30,9 @@ namespace MSO3_Testing
         public void check_einde_false(Spel.spelers speler_nummer)
         {
             // Arrange
-            Bord bord = new Bord(6, 1, true);
             Check_Einde_Spel einde = new Check_Einde_Spel();
+            Spel.speel_zet = new Speel_Zet_Mankala();
+            Bord bord = new Bord(6, 1, true);
             Speler speler = new Speler(speler_nummer);
 
             // Act

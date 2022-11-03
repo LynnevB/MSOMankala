@@ -18,7 +18,7 @@ namespace mso3
             if ((steentjes == 2 || steentjes == 3) && laatste_kuiltje.speler_nummer != speler.speler_nummer)
             {
                 laatste_kuiltje.haal_leeg();
-                steen_in_thuiskuiltje(steentjes, speler, bord);
+                Spel.strooi_stenen.steen_in_thuiskuiltje(steentjes, speler, bord);
 
                 print_tekst("De steentjes uit kuiltje " + bord.kuiltjes.IndexOf(laatste_kuiltje) + " en stop ze bij hun buit");
                 bord.print_bord();
