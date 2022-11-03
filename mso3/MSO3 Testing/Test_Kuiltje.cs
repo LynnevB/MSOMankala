@@ -48,6 +48,7 @@ namespace MSO3_Testing
         public void haal_leeg_kuiltje_normaal(int begin_aantal)
         {
             // Arrange
+            int expected_stenen = 0;
             Kuiltje kuil = new Kuiltje_Normaal(Spel.spelers.p1, begin_aantal);
 
             // Act
@@ -55,7 +56,7 @@ namespace MSO3_Testing
             int stenen = kuil.steentjes;
 
             // Assert
-            Assert.Equal(0, stenen);
+            Assert.Equal(expected_stenen, stenen);
         }
 
         [Theory]

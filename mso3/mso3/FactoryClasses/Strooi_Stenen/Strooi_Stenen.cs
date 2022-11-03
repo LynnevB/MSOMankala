@@ -31,10 +31,10 @@ namespace mso3
             return current;
         }
 
-        // bool die true teruggeeft als er een steentje in het kuiltje moet worden gestrooid
+        // bool die true teruggeeft of er een steentje in het kuiltje moet worden gestrooid
         public abstract bool moet_steen_in_kuiltje(Kuiltje current, Spel.spelers speler);
 
-        // stenen worden gegooid in het thuiskuiltje van de speler
+        // bepaald aantal stenen worden gegooid in het thuiskuiltje van de speler
         public void steen_in_thuiskuiltje(int steentjes, Speler speler, Bord bord)
         {
             if (speler.speler_nummer == Spel.spelers.p1)

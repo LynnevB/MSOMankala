@@ -6,6 +6,8 @@ namespace mso3
 {
     public class Speel_Zet_Mankala : Speel_Zet
     {
+        // pakt het laatste gestrooide steentje EN de steentjes in het kuiltje tegenover
+        // deze stenen worden in het thuiskuiltje gegooid van de speler die aan de beurt is
         public void zet_tegenover_kuiltje(Kuiltje laatste_kuiltje, Bord bord, Speler speler)
         {
             Kuiltje tegenover = bord.tegenover_kuiltje(laatste_kuiltje);
@@ -17,6 +19,7 @@ namespace mso3
             Spel.strooi_stenen.steen_in_thuiskuiltje(steentjes, speler, bord);
         }
 
+        // loop van de zet van een speler totdat de beurt voorbij is
         public override void speel_zet(Bord bord, Speler speler)
         {
             // eerste zet
@@ -28,7 +31,7 @@ namespace mso3
             {
                 bord.print_bord();
 
-                // eigen thuiskuiltje
+                // laatste steen in eigen thuiskuiltje
                 if (laatste_kuiltje is Kuiltje_Thuis && laatste_kuiltje.speler_nummer == speler.speler_nummer)
                 {
                     if (Spel.check_einde_spel.check_einde(bord, speler))
@@ -39,7 +42,7 @@ namespace mso3
                     laatste_kuiltje = zet_kies_kuiltje(bord, speler);
                 }
 
-                // niet leeg kuiltje -> pak deze stenen en ga verder 
+                // laatste steen in een niet leeg kuiltje -> pak deze stenen en ga verder 
                 else if (laatste_kuiltje.steentjes > 1)
                 {
                     print_tekst(speler.speler_nummer + " pakt de steentjes van kuiltje " + bord.kuiltjes.IndexOf(laatste_kuiltje));
@@ -48,7 +51,9 @@ namespace mso3
 
                 else
                 {
-                    // leeg kuiltje speler + tegenover niet leeg -> pak laatste gestrooide steen en tegenover kuiltje voeg toe aan thuiskuiltje zet over
+                    // laatste steen in een leeg kuiltje van de speler && tegenover niet leeg
+                    // -> pak laatste gestrooide steen en de stenen in het tegenover kuiltje en voeg ze toe aan thuiskuiltje
+                    // -> zet over
                     if (bord.tegenover_kuiltje(laatste_kuiltje).steentjes > 0 && laatste_kuiltje.speler_nummer == speler.speler_nummer)
                     {
                         print_tekst(speler.speler_nummer + " pakt het laatste steentje en de steentjes aan de overkant en gooit ze in hun thuiskuiltje.");
@@ -56,8 +61,10 @@ namespace mso3
                         bord.print_bord();
                     }
 
-                    // leeg kuiltje speler + tegenover is leeg -> volgende aan de beurt
-                    // leeg kuiltje andere speler -> volgende aan de beurt
+                    // laatste steen in een leeg kuiltje van de speler && tegenover is leeg
+                    // of
+                    // laatste steen in een leeg kuiltje van de andere speler
+                    // -> zet over
                     print_tekst(speler.speler_nummer + ", jouw beurt is over.");
                     volgende_beurt = true;
                 }

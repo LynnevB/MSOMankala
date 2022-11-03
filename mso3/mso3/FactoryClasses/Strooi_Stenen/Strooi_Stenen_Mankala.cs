@@ -9,7 +9,7 @@ namespace mso3
 
         public override bool moet_steen_in_kuiltje(Kuiltje current, Spel.spelers speler)
         {
-            return !(current is Kuiltje_Thuis && current.speler_nummer == speler);
+            return !(current is Kuiltje_Thuis && current.speler_nummer != speler);
         }
     }
 }

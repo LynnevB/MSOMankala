@@ -22,6 +22,7 @@ namespace mso3
                     && kuiltje.steentjes > 0);
         }
 
+        // vertel de speler wat er is gebeurd en wacht tot ze verder willen gaan
         public void print_tekst(string tekst)
         {
             Console.WriteLine(tekst);

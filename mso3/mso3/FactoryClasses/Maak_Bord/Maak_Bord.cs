@@ -6,7 +6,7 @@ namespace mso3
 {
     public class Maak_Bord
     {
-        public Bord maakBord()
+        public Bord maak_bord()
         {
             Console.WriteLine("Hoeveel kuiltjes wil je per speler?");
             int aantal_kuiltjes = Convert.ToInt32(Console.ReadLine());

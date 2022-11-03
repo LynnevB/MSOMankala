@@ -6,6 +6,7 @@ namespace mso3
 {
     class Speel_Zet_Wari : Speel_Zet
     {
+        // loop van de zet van een speler totdat de beurt voorbij is
         public override void speel_zet(Bord bord, Speler speler)
         {
             // eerste zet

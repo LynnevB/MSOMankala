@@ -14,6 +14,7 @@ namespace mso3
             eindig_spel = false;
         }
 
+        // print de mogelijke kuiltjes zodat de speler kan zien wat de opties zijn
         List<int> print_mogelijke_kuiltjes(Bord bord)
         {
             List<int> mogelijke_kuiltjes = new List<int>();
@@ -32,6 +33,7 @@ namespace mso3
             return mogelijke_kuiltjes;
         }
 
+        // laat de speler één van de mogelijke kuiltjes kiezen en returned het gekozen kuiltje
         public Kuiltje kies_kuiltje(Bord bord)
         {
             List<int> mogelijke_kuiltjes = print_mogelijke_kuiltjes(bord);

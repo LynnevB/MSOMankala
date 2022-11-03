@@ -30,11 +30,12 @@ namespace mso3
             check_einde_spel = regels.create_check_einde();
             winnaar = regels.create_winnaar();
 
-            bord = maak_bord.maakBord();
+            bord = maak_bord.maak_bord();
             P1 = new Speler(spelers.p1);
             P2 = new Speler(spelers.p2);
         }
 
+        // laat de speler een set regels kiezen en stuurt deze terug
         Regels kies_regels()
         {
             Console.WriteLine("Kies een set regels: ");
