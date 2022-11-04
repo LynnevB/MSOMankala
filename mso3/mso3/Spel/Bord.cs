@@ -15,21 +15,15 @@ namespace mso3
             heeft_thuiskuiltjes = thuiskuiltjes;
 
             // hieruit komt een lijst: [ (thuiskuiltje p1,) kuiltjes p1 ... , (thuiskuiltje p2,) kuiltjes p2 ...]
-            for (int nummer_speler = 0; nummer_speler < 2; nummer_speler++)
-            {
-                if (thuiskuiltjes && nummer_speler == 0)
-                    kuiltjes.Add(new Kuiltje_Thuis(Spel.spelers.p1));
-                else if(thuiskuiltjes && nummer_speler == 1)
-                    kuiltjes.Add(new Kuiltje_Thuis(Spel.spelers.p2));
+            if (thuiskuiltjes)
+                kuiltjes.Add(new Kuiltje_Thuis(Spel.spelers.p1));
+            for (int i = 0; i < aantal_kuiltjes; i++)
+                kuiltjes.Add(new Kuiltje_Normaal(Spel.spelers.p1, aantal_steentjes));
 
-                for (int i = 0; i < aantal_kuiltjes; i++)
-                {
-                    if (nummer_speler == 0)
-                        kuiltjes.Add(new Kuiltje_Normaal(Spel.spelers.p1, aantal_steentjes));
-                    else
-                        kuiltjes.Add(new Kuiltje_Normaal(Spel.spelers.p2, aantal_steentjes));
-                }
-            }
+            if (thuiskuiltjes)
+                kuiltjes.Add(new Kuiltje_Thuis(Spel.spelers.p2));
+            for (int i = 0; i < aantal_kuiltjes; i++)
+                kuiltjes.Add(new Kuiltje_Normaal(Spel.spelers.p2, aantal_steentjes));
         }
 
         // geeft het kuiltje terug die tegenover het kuiltje wat megegeven wordt ligt
