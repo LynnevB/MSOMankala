@@ -4,7 +4,7 @@ using System.Text;
 
 namespace mso3
 {
-    public class Speel_Zet_Mankala : Speel_Zet
+    public class SpeelZetMankala : SpeelZet
     {
         // pakt het laatste gestrooide steentje EN de steentjes in het kuiltje tegenover
         // deze stenen worden in het thuiskuiltje gegooid van de speler die aan de beurt is

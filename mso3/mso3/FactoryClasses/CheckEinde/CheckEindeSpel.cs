@@ -4,7 +4,7 @@ using System.Text;
 
 namespace mso3
 {
-    public class Check_Einde_Spel
+    public class CheckEindeSpel
     {
         // is true als het spel is geeindigd
         public bool check_einde(Bord bord, Speler speler)

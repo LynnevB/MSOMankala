@@ -4,7 +4,7 @@ using mso3;
 
 namespace MSO3_Testing
 {
-    public class Test_Speel_Zet
+    public class TestSpeelZet
     {
         [Theory]
         [InlineData(Spel.spelers.p1, 1)]
@@ -12,7 +12,7 @@ namespace MSO3_Testing
         public void kuiltje_mogelijk_true(Spel.spelers speler_nummer, int steentjes)
         {
             // Arrange
-            Speel_Zet speel_zet = new Speel_Zet_Mankala();
+            SpeelZet speel_zet = new SpeelZetMankala();
             Speler speler = new Speler(speler_nummer);
             Kuiltje kuil = new Kuiltje_Normaal(speler_nummer, steentjes);
 
@@ -29,7 +29,7 @@ namespace MSO3_Testing
         public void kuiltje_mogelijk_false_speler(Spel.spelers speler1, Spel.spelers speler2)
         {
             // Arrange
-            Speel_Zet speel_zet = new Speel_Zet_Mankala();
+            SpeelZet speel_zet = new SpeelZetMankala();
             Speler speler = new Speler(speler1);
             Kuiltje kuil = new Kuiltje_Normaal(speler2, 1);
 
@@ -44,7 +44,7 @@ namespace MSO3_Testing
         public void kuiltje_mogelijk_false_kuiltje()
         {
             // Arrange
-            Speel_Zet speel_zet = new Speel_Zet_Mankala();
+            SpeelZet speel_zet = new SpeelZetMankala();
             Speler speler = new Speler(Spel.spelers.p1);
             Kuiltje kuil = new Kuiltje_Thuis(Spel.spelers.p1);
             kuil.steentjes = 1;
@@ -62,7 +62,7 @@ namespace MSO3_Testing
         public void kuiltje_mogelijk_false_steentjes(int steentjes)
         {
             // Arrange
-            Speel_Zet speel_zet = new Speel_Zet_Mankala();
+            SpeelZet speel_zet = new SpeelZetMankala();
             Speler speler = new Speler(Spel.spelers.p1);
             Kuiltje kuil = new Kuiltje_Normaal(Spel.spelers.p1, steentjes);
 

@@ -4,7 +4,7 @@ using mso3;
 
 namespace MSO3_Testing
 {
-    public class Test_Strooi_Stenen
+    public class TestStrooiStenen
     {
         [Theory]
         [InlineData(Spel.spelers.p1, 1, 0)]
@@ -16,7 +16,7 @@ namespace MSO3_Testing
         public void steen_in_thuiskuiltje_juiste_kuiltjes(Spel.spelers speler_nummer, int steentjes, int kuil_index)
         {
             // Arrange
-            Strooi_Stenen strooi_stenen = new Strooi_Stenen_Mankala();
+            StrooiStenen strooi_stenen = new StrooiStenenMankala();
             Speler speler = new Speler(speler_nummer);
             Bord bord = new Bord(1, 0, true);
 
@@ -38,7 +38,7 @@ namespace MSO3_Testing
         public void steen_in_thuiskuiltje_verkeerde_kuiltjes(Spel.spelers speler_nummer, int kuil_index)
         {
             // Arrange
-            Strooi_Stenen strooi_stenen = new Strooi_Stenen_Mankala();
+            StrooiStenen strooi_stenen = new StrooiStenenMankala();
             Speler speler = new Speler(speler_nummer);
             int begin_stenen = 0;
             Bord bord = new Bord(1, begin_stenen, true);

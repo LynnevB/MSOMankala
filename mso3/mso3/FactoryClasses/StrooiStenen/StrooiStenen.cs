@@ -4,7 +4,7 @@ using System.Text;
 
 namespace mso3
 {
-    public abstract class Strooi_Stenen
+    public abstract class StrooiStenen
     {
         // kuiltje dat wordt megegeven als current is het gekozen kuiltje dat leeg wordt gehaald
         // daar wordt dus niet een steentje in gegooid

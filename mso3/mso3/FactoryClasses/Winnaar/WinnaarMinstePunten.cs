@@ -4,7 +4,7 @@ using System.Text;
 
 namespace mso3
 {
-    public class Winnaar_Minste_Punten : Winnaar
+    public class WinnaarMinstePunten : Winnaar
     {
         public override bool speler1_wint(int stenen_p1, int stenen_p2)
         {

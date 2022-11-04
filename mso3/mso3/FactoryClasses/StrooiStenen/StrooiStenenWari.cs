@@ -4,7 +4,7 @@ using System.Text;
 
 namespace mso3
 {
-    class Strooi_Stenen_Wari : Strooi_Stenen
+    class StrooiStenenWari : StrooiStenen
     {
         public override bool moet_steen_in_kuiltje(Kuiltje current, Spel.spelers speler)
         {

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace mso3
 {
-    public abstract class Speel_Zet
+    public abstract class SpeelZet
     {
         // laat de speler een van de mogelijke kuiltjes kiezen
         protected Kuiltje zet_kies_kuiltje(Bord bord, Speler speler)

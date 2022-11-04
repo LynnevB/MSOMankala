@@ -4,7 +4,7 @@ using mso3;
 
 namespace MSO3_Testing
 {
-    public class Test_Bord
+    public class TestBord
     {
         [Theory]
         [InlineData(false, 1, 0, 1)]

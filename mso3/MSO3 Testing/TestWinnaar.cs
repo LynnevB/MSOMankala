@@ -4,7 +4,7 @@ using mso3;
 
 namespace MSO3_Testing
 {
-    public class Test_Winnaar
+    public class TestWinnaar
     {
         [Theory]
         [InlineData(5, 0, "Speler 1 heeft gewonnen!")]
@@ -21,7 +21,7 @@ namespace MSO3_Testing
         public void winnaar_meeste_stenen_true(int stenen_p1, int stenen_p2, string expected)
         {
             // Arrange
-            Winnaar geef_winnaar = new Winnaar_Meeste_Punten();
+            Winnaar geef_winnaar = new WinnaarMeestePunten();
             Bord bord = new Bord(6, 4, true);
 
             // Act
@@ -51,7 +51,7 @@ namespace MSO3_Testing
         public void winnaar_meeste_stenen_false(int stenen_p1, int stenen_p2, string expected)
         {
             // Arrange
-            Winnaar geef_winnaar = new Winnaar_Meeste_Punten();
+            Winnaar geef_winnaar = new WinnaarMeestePunten();
             Bord bord = new Bord(6, 4, true);
 
             // Act
@@ -82,7 +82,7 @@ namespace MSO3_Testing
         public void winnaar_minste_stenen_true(int stenen_p1, int stenen_p2, string expected)
         {
             // Arrange
-            Winnaar geef_winnaar = new Winnaar_Minste_Punten();
+            Winnaar geef_winnaar = new WinnaarMinstePunten();
             Bord bord = new Bord(6, 4, true);
 
             // Act
@@ -112,7 +112,7 @@ namespace MSO3_Testing
         public void winnaar_minste_stenen_false(int stenen_p1, int stenen_p2, string expected)
         {
             // Arrange
-            Winnaar geef_winnaar = new Winnaar_Minste_Punten();
+            Winnaar geef_winnaar = new WinnaarMinstePunten();
             Bord bord = new Bord(6, 4, true);
 
             // Act

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace mso3
 {
-    public class Maak_Bord
+    public class MaakBord
     {
         public Bord maak_bord()
         {
